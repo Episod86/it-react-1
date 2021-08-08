@@ -5,7 +5,7 @@ import { Message } from "./Message/Message";
 import {
   updateNewMessageBodyCreator,
   sendMessageCreator,
-} from "../../redux/state";
+} from "../../redux/dialogs-reducer";
 
 import style from "./Dialogs.module.css";
 
