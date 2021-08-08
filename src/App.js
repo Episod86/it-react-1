@@ -9,6 +9,7 @@ import { Dialogs } from "./components/Dialogs/Dialogs";
 import "./App.css";
 
 const App = (props) => {
+  // debugger;
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -19,8 +20,9 @@ const App = (props) => {
             path="/profile"
             render={() => (
               <Profile
-                state={props.state.profilePage}
+                profilePage={props.state.profilePage}
                 addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
               />
             )}
           />
