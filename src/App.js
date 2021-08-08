@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 import { Header } from "./components/Header/Header";
 import { Sidebar } from "./components/Sidebar/Sidebar";
@@ -10,27 +10,22 @@ import "./App.css";
 
 const App = (props) => {
   return (
-    <BrowserRouter>
-      <div className="app-wrapper">
-        <Header />
-        <Sidebar />
-        <div className="app-wrapper-content">
-          <Route
-            path="/profile"
-            render={() => (
-              <Profile
-                profilePage={props.state.profilePage}
-                dispatch={props.dispatch}
-              />
-            )}
-          />
-          <Route
-            path="/dialogs"
-            render={() => <Dialogs state={props.state.dialogsPage} />}
-          />
-        </div>
+    <div className="app-wrapper">
+      <Header />
+      <Sidebar />
+      <div className="app-wrapper-content">
+        <Route
+          path="/profile"
+          render={() => (
+            <Profile
+              profilePage={props.state.profilePage}
+              dispatch={props.dispatch}
+            />
+          )}
+        />
+        <Route path="/dialogs" render={() => <Dialogs store={props.store} />} />
       </div>
-    </BrowserRouter>
+    </div>
   );
 };
 

@@ -7,10 +7,14 @@ export const Sidebar = () => {
   return (
     <nav className={style.nav}>
       <div className={style.item}>
-        <NavLink to="/profile">Profile</NavLink>
+        <NavLink to="/profile" activeClassName={style.activeLink}>
+          Profile
+        </NavLink>
       </div>
       <div className={style.item}>
-        <NavLink to="/dialogs">Messages</NavLink>
+        <NavLink to="/dialogs" activeClassName={style.activeLink}>
+          Messages
+        </NavLink>
       </div>
       <div className={style.item}>
         <NavLink to="/news">News</NavLink>
