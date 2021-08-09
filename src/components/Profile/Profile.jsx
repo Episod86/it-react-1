@@ -1,19 +1,16 @@
 import React from "react";
 
-import { MyPosts } from "./MyPosts";
 import { ProfileInfo } from "./ProfileInfo";
 
 import style from "./Profile.module.css";
+import { MyPostsContainer } from "./MyPosts/MyPostsContainer";
 
 export const Profile = (props) => {
+  debugger;
   return (
     <div className={style.content}>
       <ProfileInfo />
-      <MyPosts
-        posts={props.profilePage.posts}
-        newPostText={props.profilePage.newPostText}
-        dispatch={props.dispatch}
-      />
+      <MyPostsContainer store={props.store} />
     </div>
   );
 };
