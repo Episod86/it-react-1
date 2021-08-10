@@ -7,6 +7,7 @@ import { Profile } from "./components/Profile/Profile";
 
 import "./App.css";
 import { DialogsContainer } from "./components/Dialogs/DialogsContainer";
+import { Users } from "./components/Users";
 
 const App = (props) => {
   return (
@@ -18,6 +19,14 @@ const App = (props) => {
         <Route
           path="/dialogs"
           render={() => <DialogsContainer />}
+        />
+        <Route
+          path="/dialogs"
+          render={() => <DialogsContainer />}
+        />
+        <Route
+          path="/users"
+          render={() => <Users />}
         />
       </div>
     </div>
