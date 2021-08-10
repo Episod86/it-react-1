@@ -8,11 +8,16 @@ import style from "./Dialogs.module.css";
 export const Dialogs = (props) => {
   let state = props.dialogsPage;
   let dialogsElement = state.dialogsData.map((dialog) => (
-    <DialogItem name={dialog.name} id={dialog.id} avatar={dialog.avatar} />
+    <DialogItem
+      name={dialog.name}
+      id={dialog.id}
+      key={dialog.id}
+      avatar={dialog.avatar}
+    />
   ));
 
   let messageElement = state.messages.map((mes) => (
-    <Message message={mes.message} />
+    <Message message={mes.message} key={mes.id} />
   ));
   let newMessageBody = state.newMessageBody;
 

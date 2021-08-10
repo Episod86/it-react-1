@@ -1,4 +1,3 @@
-// import React from "react";
 import { connect } from "react-redux";
 
 import {
@@ -7,7 +6,6 @@ import {
 } from "../../redux/dialogs-reducer";
 
 import { Dialogs } from "./Dialogs";
-// import { StoreContext } from "../../../StoreContext";
 
 const mapStateToProps = (state) => {
   return {
@@ -17,11 +15,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateNewMessageBody: () => {
-      dispatch(sendMessageCreator());
-    },
-    sendMessage: (body) => {
+    updateNewMessageBody: (body) => {
       dispatch(updateNewMessageBodyCreator(body));
+    },
+    sendMessage: () => {
+      dispatch(sendMessageCreator());
     },
   };
 };

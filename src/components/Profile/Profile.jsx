@@ -6,7 +6,6 @@ import style from "./Profile.module.css";
 import { MyPostsContainer } from "./MyPosts/MyPostsContainer";
 
 export const Profile = (props) => {
-  debugger;
   return (
     <div className={style.content}>
       <ProfileInfo />
