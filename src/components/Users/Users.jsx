@@ -3,9 +3,8 @@ import style from "./Users.module.css"
 
 export const Users = (props) => {
   // debugger
-  if (props.users.length === 0) {props.setUsers(
-    
-    [
+  if (props.users.length === 0) 
+    {props.setUsers([
       { id: '1', photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsZwjA0i1NnKN2XckBnoxA0wm2Y-9JxuyKVg&usqp=CAU', followed: false, fullName: 'Aleksey', status: 'I am boss', location: {city: 'Minsk', country: 'Belarus'} },
       { id: '2', photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsZwjA0i1NnKN2XckBnoxA0wm2Y-9JxuyKVg&usqp=CAU', followed: true, fullName: 'Ivan', status: 'I am student', location: {city: 'Moscow', country: 'Russia'} },
       { id: '3', photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsZwjA0i1NnKN2XckBnoxA0wm2Y-9JxuyKVg&usqp=CAU', followed: false, fullName: 'Elisey', status: 'I am student', location: {city: 'Brussels', country: 'Belgium'} },
