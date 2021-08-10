@@ -2,15 +2,12 @@ const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET-USERS';
 
-const initialState = {
-  users: [
-    // { id: '1', followed: false, fullName: 'Aleksey', status: 'I am boss', location: {city: Minsk, country: 'Belarus'} },
-    // { id: '2', followed: true, fullName: 'Ivan', status: 'I am student', location: {city: Moscow, country: 'Russia'} },
-    // { id: '3', followed: false, fullName: 'Elisey', status: 'I am student', location: {city: Brussels, country: 'Belgium'} },
-  ],
+const initialState = { 
+  users: [ ]
 };
 
 export const usersReducer = (state = initialState, action) => {
+  // debugger
   switch (action.type) {
     case FOLLOW:
       return {

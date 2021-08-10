@@ -7,7 +7,7 @@ import { Profile } from "./components/Profile/Profile";
 
 import "./App.css";
 import { DialogsContainer } from "./components/Dialogs/DialogsContainer";
-import { Users } from "./components/Users";
+import { UsersContainer } from "./components/Users/UsersContainer";
 
 const App = (props) => {
   return (
@@ -26,7 +26,7 @@ const App = (props) => {
         />
         <Route
           path="/users"
-          render={() => <Users />}
+          render={() => <UsersContainer />}
         />
       </div>
     </div>
