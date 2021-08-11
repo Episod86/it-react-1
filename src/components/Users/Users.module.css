@@ -1,3 +1,8 @@
 .img {
-    width: 60px;
+  width: 60px;
+}
+
+.selectedPage {
+  font-weight: bold;
+  font-size: 200%;
 }

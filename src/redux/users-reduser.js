@@ -4,6 +4,9 @@ const SET_USERS = "SET-USERS";
 
 const initialState = {
   users: [],
+  pageSize: 5,
+  totalUsersCount: 20,
+  currentPage: 2,
 };
 
 export const usersReducer = (state = initialState, action) => {
