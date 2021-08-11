@@ -1,6 +1,6 @@
-import axios from "axios";
-import React from "react";
 
+import React from "react";
+import axios from "axios";
 import userPhoto from "../../image/photoUser.png";
 
 import style from "./Users.module.css";
@@ -10,6 +10,19 @@ export class Users extends React.Component {
     axios
       .get(
         `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`
+      )
+      .then((response) => {
+        
+        this.props.setUsers(response.data.items);
+        this.props.setTotalUsersCount(response.data.totalCount);
+      });
+  }
+
+  onPageChanged(pageNumber) {
+    this.props.setCurrentPage(pageNumber);
+    axios
+      .get(
+        `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`
       )
       .then((response) => {
         this.props.setUsers(response.data.items);
@@ -31,6 +44,7 @@ export class Users extends React.Component {
             return (
               <span
                 className={this.props.currentPage === p && style.selectedPage}
+                onClick={(e) => {this.onPageChanged(p)}}
               >
                 {p}
               </span>

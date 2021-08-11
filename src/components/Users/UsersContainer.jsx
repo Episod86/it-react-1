@@ -4,6 +4,8 @@ import {
   followActionCreator,
   setUsersActionCreator,
   unfollowActionCreator,
+  setCurrentPageActionCreator,
+  setTotalUsersCountActionCreator
 } from "../../redux/users-reduser";
 import { Users } from "./Users";
 
@@ -21,6 +23,8 @@ const mapDispatchToProps = (dispatch) => {
     follow: (userId) => dispatch(followActionCreator(userId)),
     unfollow: (userId) => dispatch(unfollowActionCreator(userId)),
     setUsers: (users) => dispatch(setUsersActionCreator(users)),
+    setCurrentPage: (pageNumber) => dispatch(setCurrentPageActionCreator(pageNumber)),
+    setTotalUsersCount: (totalCount) => dispatch(setTotalUsersCountActionCreator(totalCount)),
   };
 };
 export const UsersContainer = connect(
