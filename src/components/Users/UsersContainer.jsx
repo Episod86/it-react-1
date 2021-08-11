@@ -7,7 +7,7 @@ import {
   setCurrentPageActionCreator,
   setTotalUsersCountActionCreator
 } from "../../redux/users-reduser";
-import { Users } from "./Users";
+import { UsersAPIComponent } from "./Users";
 
 const mapStateToProps = (state) => {
   return {
@@ -30,4 +30,4 @@ const mapDispatchToProps = (dispatch) => {
 export const UsersContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Users);
+)(UsersAPIComponent);
