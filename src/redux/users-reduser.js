@@ -44,7 +44,6 @@ export const usersReducer = (state = initialState, action) => {
       return { ...state, currentPage: action.currentPage };
 
       case SET_TOTAL_USERS_COUNT:
-        debugger
         return { ...state, totalUsersCount: action.totalUsersCount };      
 
     default:

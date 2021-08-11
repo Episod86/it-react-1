@@ -5,12 +5,13 @@ import userPhoto from "../../image/photoUser.png";
 import style from "./Users.module.css";
 
 const Users = (props) => {
+  debugger
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
   let pages = [];
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
   }
-  // debugger;
+  
   return (
     <div>
       <div>
@@ -19,7 +20,7 @@ const Users = (props) => {
             <span
               className={props.currentPage === p && style.selectedPage}
               onClick={(e) => {
-                this.onPageChanged(p);
+                props.onPageChanged(p);
               }}
             >
               {p}

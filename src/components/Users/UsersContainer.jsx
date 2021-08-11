@@ -10,10 +10,10 @@ import {
   setCurrentPageActionCreator,
   setTotalUsersCountActionCreator,
 } from "../../redux/users-reduser";
-// import { UsersAPIComponent } from "./Users";
+
 class UsersContainer extends React.Component {
-  // debugger;
   componentDidMount() {
+    
     axios
       .get(
         `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`
@@ -22,9 +22,10 @@ class UsersContainer extends React.Component {
         this.props.setUsers(response.data.items);
         this.props.setTotalUsersCount(response.data.totalCount);
       });
-  }
+  };
 
   onPageChanged(pageNumber) {
+    
     this.props.setCurrentPage(pageNumber);
     axios
       .get(
@@ -33,9 +34,10 @@ class UsersContainer extends React.Component {
       .then((response) => {
         this.props.setUsers(response.data.items);
       });
-  }
-  debugger;
+  };
+  
   render() {
+    
     return (
       <Users
         totalUsersCount={this.props.totalUsersCount}
