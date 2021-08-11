@@ -25,6 +25,11 @@ export const Sidebar = () => {
       <div className={style.item}>
         <NavLink to="/settings">Settings</NavLink>
       </div>
+      <div className={style.item}>
+        <NavLink to="/users" activeClassName={style.activeLink}>
+          Users
+        </NavLink>
+      </div>
     </nav>
   );
 };
