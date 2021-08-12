@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 import userPhoto from "../../image/photoUser.png";
 
@@ -12,7 +13,6 @@ const Users = (props) => {
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
   }
-  // debugger;
   return (
     <div>
       <div>
@@ -47,7 +47,21 @@ const Users = (props) => {
               {us.followed ? (
                 <button
                   onClick={() => {
-                    props.unfollow(us.id);
+                    axios
+                      .delete(
+                        `https://social-network.samuraijs.com/api/1.0/follow/${us.id}`,
+                        {
+                          withCredentials: true,
+                          headers: {
+                            "API-KEY": "459ae485-0486-4ece-a32f-b394969a0845",
+                          },
+                        }
+                      )
+                      .then((response) => {
+                        if (response.data.resultCode === 0) {
+                          props.unfollow(us.id);
+                        }
+                      });
                   }}
                 >
                   Unfollow
@@ -55,7 +69,24 @@ const Users = (props) => {
               ) : (
                 <button
                   onClick={() => {
-                    props.follow(us.id);
+                    // 459ae485-0486-4ece-a32f-b394969a0845
+                    // debugger;
+                    axios
+                      .post(
+                        `https://social-network.samuraijs.com/api/1.0/follow/${us.id}`,
+                        {},
+                        {
+                          withCredentials: true,
+                          headers: {
+                            "API-KEY": "459ae485-0486-4ece-a32f-b394969a0845",
+                          },
+                        }
+                      )
+                      .then((response) => {
+                        if (response.data.resultCode === 0) {
+                          props.follow(us.id);
+                        }
+                      });
                   }}
                 >
                   Follow
