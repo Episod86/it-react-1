@@ -1,11 +1,10 @@
 import React from "react";
 
-// import style from "./ProfileInfo.module.css";
-
 export const ProfileInfo = (props) => {
   if (!props.profile) {
     return <div>Загрузка</div>;
   }
+
   return (
     <div>
       <img
