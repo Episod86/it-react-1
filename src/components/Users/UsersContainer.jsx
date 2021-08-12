@@ -29,7 +29,6 @@ class UsersContainer extends React.Component {
   }
 
   onPageChanged(pageNumber) {
-    // debugger;
     this.setCurrentPage(pageNumber);
     this.toggleIsFetching(true);
     axios
