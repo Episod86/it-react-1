@@ -1,18 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { UsersAPI } from "../../api/api";
 
 import userPhoto from "../../image/photoUser.png";
 
 import style from "./Users.module.css";
-import { FollowAPI } from "../../api/api";
 
 const Users = (props) => {
-  let url;
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
   let pages = [];
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
   }
+
   return (
     <div>
       <div>
@@ -34,8 +34,7 @@ const Users = (props) => {
         <div key={us.id}>
           <span>
             <div>
-              {(url = `/profile/${us.id}`)}
-              <NavLink to={url}>
+              <NavLink to={`/profile/${us.id}`}>
                 <img
                   src={us.photos.small != null ? us.photos.small : userPhoto}
                   alt="avatar"
@@ -46,11 +45,14 @@ const Users = (props) => {
             <div>
               {us.followed ? (
                 <button
+                  disabled={props.followingInProgress.some((id) => id == us.id)}
                   onClick={() => {
-                    FollowAPI.setUnfollow(us.id).then((data) => {
+                    props.toggleFollowingProgress(true, us.id);
+                    UsersAPI.setUnfollow(us.id).then((data) => {
                       if (data.resultCode === 0) {
-                        data.unfollow(us.id);
+                        props.unfollow(us.id);
                       }
+                      props.toggleFollowingProgress(false, us.id);
                     });
                   }}
                 >
@@ -58,11 +60,14 @@ const Users = (props) => {
                 </button>
               ) : (
                 <button
+                  disabled={props.followingInProgress.some((id) => id == us.id)}
                   onClick={() => {
-                    FollowAPI.setFollow(us.id).then((data) => {
+                    props.toggleFollowingProgress(true, us.id);
+                    UsersAPI.setFollow(us.id).then((data) => {
                       if (data.resultCode === 0) {
-                        data.follow(us.id);
+                        props.follow(us.id);
                       }
+                      props.toggleFollowingProgress(false, us.id);
                     });
                   }}
                 >
