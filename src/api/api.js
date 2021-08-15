@@ -17,14 +17,10 @@ export const UsersAPI = {
       });
   },
   setFollow(userId) {
-    return instance.post(`follow/${userId}`, {}).then((response) => {
-      return response.data;
-    });
+    return instance.post(`follow/${userId}`);
   },
   setUnfollow(userId) {
-    return instance.delete(`follow/${userId}`).then((response) => {
-      return response.data;
-    });
+    return instance.delete(`follow/${userId}`);
   },
   getProfile(userId) {
     return instance.get(`/profile/${userId}`);

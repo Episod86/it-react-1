@@ -67,8 +67,8 @@ export const usersReducer = (state = initialState, action) => {
   }
 };
 
-export const follow = (userId) => ({ type: FOLLOW, userId });
-export const unfollow = (userId) => ({ type: UNFOLLOW, userId });
+export const followSucces = (userId) => ({ type: FOLLOW, userId });
+export const unfollowSucces = (userId) => ({ type: UNFOLLOW, userId });
 export const setUsers = (users) => ({ type: SET_USERS, users });
 export const setCurrentPage = (currentPage) => ({
   type: SET_CURRENT_PAGE,
@@ -88,16 +88,40 @@ export const toggleFollowingProgress = (isFetching, userId) => ({
   userId,
 });
 
-export const getUsers = (currentPage, pageSize) => (dispatch) => {
-  UsersAPI.getUsers(currentPage, pageSize).then((data) => {
-    dispatch(toggleIsFetching(false));
-    dispatch(setUsers(data.items));
-    dispatch(setTotalUsersCount(data.totalCount));
-  });
+export const getUsers = (currentPage, pageSize) => {
+  return (dispatch) => {
+    dispatch(toggleIsFetching(true));
+
+    UsersAPI.getUsers(currentPage, pageSize).then((data) => {
+      dispatch(toggleIsFetching(false));
+      dispatch(setUsers(data.items));
+      dispatch(setTotalUsersCount(data.totalCount));
+    });
+  };
 };
 
-// export const getUserProfile = (userId) => (dispatch) => {
-//   UsersAPI.getProfile(userId).then((response) => {
-//     dispatch(setUserProfile(response.data));
-//   });
-// };
+export const follow = (userId) => {
+  return (dispatch) => {
+    dispatch(toggleFollowingProgress(true, userId));
+
+    UsersAPI.setFollow(userId).then((response) => {
+      if (response.data.resultCode === 0) {
+        dispatch(followSucces(userId));
+      }
+      dispatch(toggleFollowingProgress(false, userId));
+    });
+  };
+};
+
+export const unfollow = (userId) => {
+  return (dispatch) => {
+    dispatch(toggleFollowingProgress(true, userId));
+
+    UsersAPI.setUnfollow(userId).then((response) => {
+      if (response.data.resultCode === 0) {
+        dispatch(unfollowSucces(userId));
+      }
+      dispatch(toggleFollowingProgress(false, userId));
+    });
+  };
+};
