@@ -1,4 +1,5 @@
 import React from "react";
+import { ProfileStatus } from "../ProfileStatus";
 
 export const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -14,6 +15,7 @@ export const ProfileInfo = (props) => {
       <div>
         <img src={props.profile.photos.large} />
       </div>
+      <ProfileStatus status="Hello" />
     </div>
   );
 };
