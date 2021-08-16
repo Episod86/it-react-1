@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 
 import { Sidebar } from "./components/Sidebar/Sidebar";
-import { DialogsContainer } from "./components/Dialogs/DialogsContainer";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderConteiner from "./components/Header/HeaderContainer";
