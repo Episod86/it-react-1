@@ -22,13 +22,22 @@ export const UsersAPI = {
   setUnfollow(userId) {
     return instance.delete(`follow/${userId}`);
   },
-  getProfile(userId) {
-    return instance.get(`/profile/${userId}`);
-  },
 };
 
 export const AuthAPI = {
   me() {
     return instance.get(`auth/me`);
+  },
+};
+
+export const ProfileAPI = {
+  getProfile(userId) {
+    return instance.get(`/profile/${userId}`);
+  },
+  getStatus(userId) {
+    return instance.get(`/profile/status/${userId}`);
+  },
+  updateStatus(status) {
+    return instance.put(`profile/status`, { status });
   },
 };
