@@ -8,7 +8,8 @@ import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderConteiner from "./components/Header/HeaderContainer";
 
 import "./App.css";
-import { Login } from "./components/Login";
+import Login from "./components/Login/Login";
+// import { Login } from "./components/Login";
 const App = (props) => {
   return (
     <div className="app-wrapper">
