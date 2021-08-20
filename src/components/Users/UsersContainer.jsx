@@ -61,6 +61,5 @@ export default compose(
     setCurrentPage,
     toggleFollowingProgress,
     getUsers,
-  }),
-  withAutRedirect
+  })
 )(UsersContainer);
