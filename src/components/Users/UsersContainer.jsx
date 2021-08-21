@@ -45,6 +45,7 @@ class UsersContainer extends React.Component {
           onPageChanged={this.onPageChanged}
           setCurrentPage={this.props.setCurrentPage}
           followingInProgress={this.props.folowingInProgress}
+          currentPage={this.props.currentPage}
         />
       </>
     );
