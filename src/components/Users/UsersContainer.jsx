@@ -9,7 +9,6 @@ import {
   toggleFollowingProgress,
   getUsers,
 } from "../../redux/users-reduser";
-import { withAutRedirect } from "../../hoc/ithAauthRedirect";
 import Preloader from "../Commosn/Preloader";
 import { compose } from "redux";
 import {
