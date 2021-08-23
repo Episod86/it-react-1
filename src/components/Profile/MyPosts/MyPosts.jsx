@@ -10,15 +10,6 @@ import { TextArea } from "../../Commosn/FormsControl/FormsControl";
 const maxLength10 = maxLengthCreator(10);
 
 export const MyPosts = (props) => {
-  // React.memo
-  // export const MyPosts = React.memo((props) => {
-  // PureComponent
-  // export class MyPosts extends React.PureComponent {
-  // shouldComponentUpdate
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   return nextProps !== this.props || nextState !== this.state;
-  // }
-  console.log("render");
   let postElement = props.posts.map((p) => (
     <Post message={p.message} likeCount={p.likeCount} />
   ));
