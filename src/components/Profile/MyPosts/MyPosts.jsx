@@ -6,21 +6,26 @@ import style from "./MyPosts.module.css";
 import { Field, reduxForm } from "redux-form";
 import { maxLengthCreator, required } from "../../../utils/Validators";
 import { TextArea } from "../../Commosn/FormsControl/FormsControl";
-// import { TextArea } from "../../Commosn/FormsControl";
 
 const maxLength10 = maxLengthCreator(10);
 
 export const MyPosts = (props) => {
+  // React.memo
+  // export const MyPosts = React.memo((props) => {
+  // PureComponent
+  // export class MyPosts extends React.PureComponent {
+  // shouldComponentUpdate
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   return nextProps !== this.props || nextState !== this.state;
+  // }
+  console.log("render");
   let postElement = props.posts.map((p) => (
     <Post message={p.message} likeCount={p.likeCount} />
   ));
 
-  // let newPostElement = React.createRef();
-
   let onAddPost = (values) => {
     props.addPost(values.newPostText);
   };
-
   return (
     <div>
       <h3>My posts</h3>
