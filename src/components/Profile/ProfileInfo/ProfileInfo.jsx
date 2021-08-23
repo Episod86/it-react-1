@@ -1,5 +1,6 @@
 import React from "react";
 import { ProfileStatus } from "../ProfileStatus";
+import { ProfileStatusWithHooKs } from "../ProfileStatus/ProfileStatusWithHooks";
 
 export const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -15,7 +16,10 @@ export const ProfileInfo = (props) => {
       <div>
         <img src={props.profile.photos.large} />
       </div>
-      <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
+      <ProfileStatusWithHooKs
+        status={props.status}
+        updateStatus={props.updateStatus}
+      />
     </div>
   );
 };

@@ -3,7 +3,6 @@ import React from "react";
 import style from "./Post.module.css";
 
 export const Post = (props) => {
-  // debugger;
   return (
     <div className={style.item}>
       <img
