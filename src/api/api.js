@@ -29,6 +29,7 @@ export const AuthAPI = {
     return instance.get(`auth/me`);
   },
   login(email, password, rememberMe = false) {
+    // debugger;
     return instance.post(`auth/login`, { email, password, rememberMe });
   },
   logout() {

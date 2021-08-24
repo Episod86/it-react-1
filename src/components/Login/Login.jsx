@@ -1,38 +1,32 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Field, reduxForm } from "redux-form";
-import { required } from "../../utils/Validators";
-import { Input } from "../Commosn/FormsControl/FormsControl";
-import { login, logout } from "../../redux/auth-reduser";
 import { Redirect } from "react-router-dom";
+
+import { reduxForm } from "redux-form";
+import { createField, Input } from "../Commosn/FormsControl/FormsControl";
+import { required } from "../../utils/Validators";
+
+import { login, logout } from "../../redux/auth-reduser";
+
 import style from "../Commosn/FormsControl/FormsControl.module.css";
 
-const LoginForm = (props) => {
+const LoginForm = ({ handleSubmit, error }) => {
   return (
-    <form onSubmit={props.handleSubmit}>
-      <div>
-        <Field
-          placeholder={"email"}
-          name={"email"}
-          component={Input}
-          validate={[required]}
-        />
-      </div>
-      <div>
-        <Field
-          placeholder={"Password"}
-          name={"password"}
-          component={Input}
-          validate={[required]}
-          type={"password"}
-        />
-      </div>
-      <div>
-        <Field name={"rememberMe"} component={Input} type={"checkbox"} />
-      </div>
-      {props.error && (
-        <div className={style.formSummaryError}>{props.error}</div>
+    <form onSubmit={handleSubmit}>
+      {createField("Email", "email", Input, [required])}
+      {createField("Password", "password", Input, [required], {
+        type: "password",
+      })}
+      {createField(
+        null,
+        "rememberMe",
+        Input,
+        [],
+        { type: "checkbox" },
+        "rememberMe"
       )}
+
+      {error && <div className={style.formSummaryError}>{error}</div>}
       <div>
         <button>Отправить</button>
       </div>
@@ -41,11 +35,13 @@ const LoginForm = (props) => {
 };
 
 const LoginReduxForm = reduxForm({
-  form: "Login",
+  form: "login",
 })(LoginForm);
 
 const Login = (props) => {
+  // debugger;
   const onSubmit = (formData) => {
+    // debugger;
     props.login(formData.email, formData.password, formData.rememberMe);
   };
   if (props.isAuth) {

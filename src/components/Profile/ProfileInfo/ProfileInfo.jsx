@@ -2,8 +2,8 @@ import React from "react";
 import { ProfileStatus } from "../ProfileStatus";
 import { ProfileStatusWithHooKs } from "../ProfileStatus/ProfileStatusWithHooks";
 
-export const ProfileInfo = (props) => {
-  if (!props.profile) {
+export const ProfileInfo = ({ profile, status, updateStatus }) => {
+  if (!profile) {
     return <div>Загрузка</div>;
   }
 
@@ -14,12 +14,9 @@ export const ProfileInfo = (props) => {
         alt="Профиль"
       />
       <div>
-        <img src={props.profile.photos.large} />
+        <img src={profile.photos.large} />
       </div>
-      <ProfileStatusWithHooKs
-        status={props.status}
-        updateStatus={props.updateStatus}
-      />
+      <ProfileStatusWithHooKs status={status} updateStatus={updateStatus} />
     </div>
   );
 };
