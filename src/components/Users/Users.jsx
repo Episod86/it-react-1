@@ -17,7 +17,7 @@ const Users = ({
     <div>
       <Paginator
         currentPage={currentPage}
-        totalUsersCount={totalUsersCount}
+        totalItemCount={totalUsersCount}
         onPageChanged={onPageChanged}
         pageSize={pageSize}
       />
@@ -30,7 +30,6 @@ const Users = ({
           follow={props.follow}
         />
       ))}
-      ;
     </div>
   );
 };
