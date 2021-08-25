@@ -29,7 +29,6 @@ export const AuthAPI = {
     return instance.get(`auth/me`);
   },
   login(email, password, rememberMe = false) {
-    // debugger;
     return instance.post(`auth/login`, { email, password, rememberMe });
   },
   logout() {
@@ -46,5 +45,10 @@ export const ProfileAPI = {
   },
   updateStatus(status) {
     return instance.put(`profile/status`, { status: status });
+  },
+  savePhoto(photoFile) {
+    const formData = new FormData();
+    formData.append("image", photoFile);
+    return instance.put(`profile/photo`, formData);
   },
 };
