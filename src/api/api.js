@@ -55,3 +55,9 @@ export const ProfileAPI = {
     return instance.put(`profile/`, profile);
   },
 };
+
+export const SecurityAPI = {
+  getCaptchaUrl() {
+    return instance.get(`security/get-captcha-url`);
+  },
+};
