@@ -3,12 +3,13 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 export const ProfileStatus = (props) => {
-  let [editMode, setEditMode] = useState(false);
+  const [editMode, setEditMode] = useState(false);
   let [status, setStatus] = useState(props.status);
 
   useEffect(() => {
     setStatus(props.status);
   }, [props.status]);
+
   const activateEditMode = () => {
     setEditMode(true);
   };

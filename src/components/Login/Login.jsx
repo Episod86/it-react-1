@@ -39,9 +39,7 @@ const LoginReduxForm = reduxForm({
 })(LoginForm);
 
 const Login = (props) => {
-  // debugger;
   const onSubmit = (formData) => {
-    // debugger;
     props.login(formData.email, formData.password, formData.rememberMe);
   };
   if (props.isAuth) {
