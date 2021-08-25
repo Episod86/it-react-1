@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "//episod86.github.io/it-react-1/static/css/main.efe0e763.chunk.css",
-    "main.js": "//episod86.github.io/it-react-1/static/js/main.d14c6894.chunk.js",
-    "main.js.map": "//episod86.github.io/it-react-1/static/js/main.d14c6894.chunk.js.map",
+    "main.js": "//episod86.github.io/it-react-1/static/js/main.516e7282.chunk.js",
+    "main.js.map": "//episod86.github.io/it-react-1/static/js/main.516e7282.chunk.js.map",
     "runtime-main.js": "//episod86.github.io/it-react-1/static/js/runtime-main.643a4b3c.js",
     "runtime-main.js.map": "//episod86.github.io/it-react-1/static/js/runtime-main.643a4b3c.js.map",
     "static/js/2.47860f22.chunk.js": "//episod86.github.io/it-react-1/static/js/2.47860f22.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.643a4b3c.js",
     "static/js/2.47860f22.chunk.js",
     "static/css/main.efe0e763.chunk.css",
-    "static/js/main.d14c6894.chunk.js"
+    "static/js/main.516e7282.chunk.js"
   ]
 }
