@@ -1,22 +1,43 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Button } from "antd";
+
+import { Clock } from "../Clock";
 
 import style from "./Header.module.css";
 
 const Header = (props) => {
   return (
     <div className={style.header}>
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxiwWCpFc4gAmdCBNs4jdn04D0FyVDS8NtmA&usqp=CAU"
-        alt="Логотип"
-      />
+      <div className={style.titleBlock}>
+        <img
+          src="https://w7.pngwing.com/pngs/795/595/png-transparent-cat-paw-dog-paw-background-pet-paw-black.png"
+          alt="logo"
+        />
+        <div className={style.title}>Social network</div>
+        <Clock />
+      </div>
+
       <div className={style.loginBlock}>
         {props.isAuth ? (
-          <div>
-            {props.login} - <button onClick={props.logout}>log out</button>
+          <div className={style.loginBlockAuth}>
+            <NavLink to={"/profile"}>
+              <div className={style.login}>{props.login}</div>
+            </NavLink>
+            <Button
+              type="primary"
+              onClick={props.logout}
+              className={style.button}
+            >
+              Log out
+            </Button>
           </div>
         ) : (
-          <NavLink to={"/login"}>LOGIN</NavLink>
+          <NavLink to={"/login"}>
+            <Button type="primary" className={style.button}>
+              LOGIN
+            </Button>
+          </NavLink>
         )}
       </div>
     </div>
