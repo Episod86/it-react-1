@@ -18,7 +18,7 @@ import {
   getTotalUsersCount,
 } from "../../redux/users-selectors";
 
-import Users from "./Users";
+import { Users } from "./Users";
 import Preloader from "../Commosn/Preloader";
 
 class UsersContainer extends React.Component {

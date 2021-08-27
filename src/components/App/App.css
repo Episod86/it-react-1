@@ -1,6 +1,5 @@
 .app-wrapper {
   margin: 0 auto;
-  /* max-width: 1366px; */
   padding: 12px;
   display: grid;
   grid-template-columns: 2fr 10fr;

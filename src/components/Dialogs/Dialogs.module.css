@@ -1,4 +1,42 @@
 .dialogs {
   display: grid;
-  grid-template-columns: 2fr 10fr;
+  grid-template-columns: 1fr 10fr;
+  grid-gap: 10px;
+}
+
+.message {
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px grey;
+  margin: 16px 24px;
+  background: #f8f6f6a8;
+  padding: 4px 8px;
+}
+
+.dialog {
+  padding-bottom: 32px;
+}
+.dialog a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dialogName {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(255, 81, 0);
+}
+
+.dialog img {
+  width: 50px;
+}
+
+.addMessage {
+  border-radius: 10px;
+  box-shadow: 0 0 7px 3px #744631;
+  text-indent: 30px;
+  padding: 20px;
+  margin: 24px;
+  width: 300px;
 }

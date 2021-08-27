@@ -3,10 +3,20 @@
   background-color: rgb(237, 225, 225);
 }
 
-.nav ul {
-  list-style-type: none;
+.nav {
+  font-size: 24px;
+  padding: 0 8px;
+}
+
+.item {
+  padding-bottom: 16px;
+}
+
+.item a:hover {
+  font-weight: bold;
 }
 
 .activeLink {
+  font-weight: bold;
   color: gold;
 }

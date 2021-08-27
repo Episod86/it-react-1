@@ -6,7 +6,7 @@ import { Clock } from "../Clock";
 
 import style from "./Header.module.css";
 
-const Header = (props) => {
+export const Header = (props) => {
   return (
     <div className={style.header}>
       <div className={style.titleBlock}>
@@ -43,5 +43,3 @@ const Header = (props) => {
     </div>
   );
 };
-
-export default Header;

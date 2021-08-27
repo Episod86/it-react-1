@@ -14,32 +14,24 @@ let state = {
 
 it("length of posts should be encremented", () => {
   let action = addPostActionCreator("New Post");
-
   let newState = profileReducer(state, action);
-
   expect(newState.posts.length).toBe(4);
 });
 
 it("text message should be correct", () => {
   let action = addPostActionCreator("New Post");
-
   let newState = profileReducer(state, action);
-
   expect(newState.posts[3].message).toBe("New Post");
 });
 
 it("length of posts after delete should be decrement", () => {
   let action = deletePost(1);
-
   let newState = profileReducer(state, action);
-
   expect(newState.posts.length).toBe(2);
 });
 
 it("length of posts after delete shouldn't if id be incorrect", () => {
   let action = deletePost(100);
-
   let newState = profileReducer(state, action);
-
   expect(newState.posts.length).toBe(4);
 });

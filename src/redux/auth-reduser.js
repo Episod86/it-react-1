@@ -30,6 +30,7 @@ export const setAuthUserData = (id, email, login, isAuth) => ({
   type: SET_USER_DATA,
   payload: { id, email, login, isAuth },
 });
+
 export const setCaptchaUrlSuccess = (captchaUrl) => ({
   type: SET_CAPTCHA_URL_SUCCESS,
   payload: { captchaUrl },
@@ -64,7 +65,6 @@ export const login =
 export const getCaptchaUrl = () => async (dispatch) => {
   const response = await SecurityAPI.getCaptchaUrl();
   const captchaUrl = response.data.url;
-
   dispatch(setCaptchaUrlSuccess(captchaUrl));
 };
 

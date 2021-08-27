@@ -7,7 +7,7 @@ import style from "./Users.module.css";
 
 export const User = ({ user, followingInProgress, unfollow, follow }) => {
   return (
-    <div>
+    <div className={style.user}>
       <span>
         <div>
           <NavLink to={`/profile/${user.id}`}>
@@ -42,12 +42,8 @@ export const User = ({ user, followingInProgress, unfollow, follow }) => {
       </span>
       <span>
         <span>
-          <div>{user.name}</div>
+          <div className={style.userName}>{user.name}</div>
           <div>{user.status}</div>
-        </span>
-        <span>
-          <div>{"user.location.countr"}</div>
-          <div>{"user.location.city"}</div>
         </span>
       </span>
     </div>

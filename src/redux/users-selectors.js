@@ -1,12 +1,10 @@
 import { createSelector } from "reselect";
 
 const getUsers = (state) => {
-  // debugger;
   return state.usersPage.users;
 };
 
 export const getAllUsers = createSelector(getUsers, (users) => {
-  // debugger;
   return users.filter((us) => true);
 });
 
@@ -25,6 +23,7 @@ export const getCurrentPage = (state) => {
 export const getIsFetching = (state) => {
   return state.usersPage.isFetching;
 };
+
 export const getFolowingInProgress = (state) => {
   return state.usersPage.folowingInProgress;
 };

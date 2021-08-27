@@ -5,7 +5,7 @@ import { User } from "./User";
 
 import style from "./Users.module.css";
 
-const Users = ({
+export const Users = ({
   currentPage,
   totalUsersCount,
   pageSize,
@@ -14,7 +14,7 @@ const Users = ({
   ...props
 }) => {
   return (
-    <div>
+    <div className={style.users}>
       <Paginator
         currentPage={currentPage}
         totalItemCount={totalUsersCount}
@@ -33,5 +33,3 @@ const Users = ({
     </div>
   );
 };
-
-export default Users;

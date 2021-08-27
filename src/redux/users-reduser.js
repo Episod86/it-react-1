@@ -11,7 +11,7 @@ const TOGGLE_IS_FOLLOWING_PROGRESS = "TOGGLE-IS-FOLLOWING-PROGRESS";
 
 const initialState = {
   users: [],
-  pageSize: 5,
+  pageSize: 10,
   totalUsersCount: 0,
   currentPage: 1,
   isFetching: true,
@@ -27,7 +27,6 @@ export const usersReducer = (state = initialState, action) => {
           followed: true,
         }),
       };
-
     case UNFOLLOW:
       return {
         ...state,
@@ -35,19 +34,14 @@ export const usersReducer = (state = initialState, action) => {
           followed: false,
         }),
       };
-
     case SET_USERS:
       return { ...state, users: action.users };
-
     case SET_CURRENT_PAGE:
       return { ...state, currentPage: action.currentPage };
-
     case SET_TOTAL_USERS_COUNT:
       return { ...state, totalUsersCount: action.totalUsersCount };
-
     case TOGGLE_IS_FETCHING:
       return { ...state, isFetching: action.isFetching };
-
     case TOGGLE_IS_FOLLOWING_PROGRESS:
       return {
         ...state,
@@ -61,20 +55,26 @@ export const usersReducer = (state = initialState, action) => {
 };
 
 export const followSucces = (userId) => ({ type: FOLLOW, userId });
+
 export const unfollowSucces = (userId) => ({ type: UNFOLLOW, userId });
+
 export const setUsers = (users) => ({ type: SET_USERS, users });
+
 export const setCurrentPage = (currentPage) => ({
   type: SET_CURRENT_PAGE,
   currentPage,
 });
+
 export const setTotalUsersCount = (totalUsersCount) => ({
   type: SET_TOTAL_USERS_COUNT,
   totalUsersCount,
 });
+
 export const toggleIsFetching = (isFetching) => ({
   type: TOGGLE_IS_FETCHING,
   isFetching,
 });
+
 export const toggleFollowingProgress = (isFetching, userId) => ({
   type: TOGGLE_IS_FOLLOWING_PROGRESS,
   isFetching,
@@ -85,7 +85,6 @@ export const getUsers = (currentPage, pageSize) => {
   return async (dispatch) => {
     dispatch(toggleIsFetching(true));
     dispatch(setCurrentPage(currentPage));
-
     const data = await UsersAPI.getUsers(currentPage, pageSize);
     dispatch(toggleIsFetching(false));
     dispatch(setUsers(data.items));

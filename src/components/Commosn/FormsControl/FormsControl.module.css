@@ -1,4 +1,23 @@
-/* .formControl{} */
+.formElement {
+  display: flex;
+  padding: 8px 0;
+}
+
+.buttonSubmit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonSubmit button {
+  font-weight: bold;
+  padding: 0.6em 0.6em;
+  outline: none;
+  background-color: rgb(237, 229, 229);
+  box-shadow: rgba(95, 94, 94, 0.3) 0 2px 5px;
+  border-radius: 2px;
+  margin-top: 16px;
+}
 
 .formControl.error input,
 .formControl.error textarea {

@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import cn from "classnames";
+
+import { Button } from "antd";
+
 import style from "./Paginator.module.css";
 
 export const Paginator = ({
@@ -6,7 +10,7 @@ export const Paginator = ({
   totalItemCount,
   onPageChanged,
   pageSize,
-  portionSize = 10,
+  portionSize = 20,
 }) => {
   let pagesCount = Math.ceil(totalItemCount / pageSize);
 
@@ -23,13 +27,14 @@ export const Paginator = ({
   return (
     <div className={style.paginator}>
       {portionNumber > 1 && (
-        <button
+        <Button
+          className={style.buttonPaginator}
           onClick={() => {
             setPortionNumber(portionNumber - 1);
           }}
         >
           PREV
-        </button>
+        </Button>
       )}
       {pages
         .filter(
@@ -40,7 +45,9 @@ export const Paginator = ({
           return (
             <span
               key={page}
-              className={currentPage === page && style.selectedPage}
+              className={cn(style.pageNumber, {
+                [style.selectedPage]: currentPage === page,
+              })}
               onClick={(e) => {
                 onPageChanged(page);
               }}
@@ -50,13 +57,14 @@ export const Paginator = ({
           );
         })}
       {portionCount > portionNumber && (
-        <button
+        <Button
+          className={style.buttonPaginator}
           onClick={() => {
             setPortionNumber(portionNumber + 1);
           }}
         >
           NEXT
-        </button>
+        </Button>
       )}
     </div>
   );

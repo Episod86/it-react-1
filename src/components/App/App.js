@@ -3,14 +3,14 @@ import { Route, Switch, withRouter } from "react-router-dom";
 import { compose } from "redux";
 import { connect } from "react-redux";
 
-import { Sidebar } from "./components/Sidebar/Sidebar";
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import UsersContainer from "./components/Users/UsersContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
-import HeaderConteiner from "./components/Header/HeaderContainer";
-import { initialisedApp } from "./redux/app-reduser";
-import Login from "./components/Login/Login";
-import Preloader from "./components/Commosn/Preloader";
+import { Sidebar } from "../Sidebar/Sidebar";
+import DialogsContainer from "../Dialogs/DialogsContainer";
+import UsersContainer from "../Users/UsersContainer";
+import ProfileContainer from "../Profile/ProfileContainer";
+import HeaderConteiner from "../Header/HeaderContainer";
+import Preloader from "../Commosn/Preloader";
+import Login from "../Login/Login";
+import { initialisedApp } from "../../redux/app-reduser";
 
 import "./App.css";
 
@@ -25,6 +25,7 @@ class App extends React.Component {
     return (
       <div className="app-wrapper">
         <HeaderConteiner />
+
         <Sidebar />
         <div className="app-wrapper-content">
           <Switch>
@@ -34,7 +35,7 @@ class App extends React.Component {
               path="/profile/:userId?"
               render={() => <ProfileContainer />}
             />
-            <Route path="/dialogs" render={() => <DialogsContainer />} />
+            {/* <Route path="/dialogs" render={() => <DialogsContainer />} /> */}
             <Route path="/dialogs" render={() => <DialogsContainer />} />
             <Route path="/users" render={() => <UsersContainer />} />
             <Route path="*" render={() => <div>404 NOT FOUND</div>} />

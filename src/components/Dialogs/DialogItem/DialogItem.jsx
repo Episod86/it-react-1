@@ -8,8 +8,8 @@ export const DialogItem = (props) => {
   return (
     <div className={style.dialog}>
       <NavLink to={path}>
-        {props.name}
-        <img src={props.avatar} alt="" />
+        <span className={style.dialogName}>{props.name}</span>
+        <img src={props.avatar} alt="photo" />
       </NavLink>
     </div>
   );

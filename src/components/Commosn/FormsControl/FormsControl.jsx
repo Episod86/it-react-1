@@ -12,6 +12,7 @@ const FormControl = ({ input, meta, ...props }) => {
     </div>
   );
 };
+
 export const TextArea = (props) => {
   const { input, meta, ...restProps } = props;
   return (
@@ -39,7 +40,7 @@ export const createField = (
   text = ""
 ) => {
   return (
-    <div>
+    <div className={style.formElement}>
       <Field
         placeholder={placeholder}
         name={name}
