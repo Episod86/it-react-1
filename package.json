@@ -2,6 +2,7 @@
   "name": "it-react-1",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http:https://episod86.github.io/it-react-1/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
