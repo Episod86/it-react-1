@@ -8,7 +8,7 @@ import DialogsContainer from "../Dialogs/DialogsContainer";
 import UsersContainer from "../Users/UsersContainer";
 import ProfileContainer from "../Profile/ProfileContainer";
 import HeaderConteiner from "../Header/HeaderContainer";
-import Preloader from "../Commosn/Preloader";
+import Preloader from "../Commons/Preloader";
 import Login from "../Login/Login";
 import { initialisedApp } from "../../redux/app-reduser";
 

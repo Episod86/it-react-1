@@ -4,10 +4,10 @@ import {
   createField,
   Input,
   TextArea,
-} from "../../Commosn/FormsControl/FormsControl";
+} from "../../Commons/FormsControl/FormsControl";
 
-// import style from "../Commosn/FormsControl/FormsControl.module.css";
-import style from "../../Commosn/FormsControl/FormsControl.module.css";
+// import style from "../Commons/FormsControl/FormsControl.module.css";
+import style from "../../Commons/FormsControl/FormsControl.module.css";
 
 export const ProfileDataForm = ({ handleSubmit, profile, error }) => {
   return (

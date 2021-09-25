@@ -19,7 +19,7 @@ import {
 } from "../../redux/users-selectors";
 
 import { Users } from "./Users";
-import Preloader from "../Commosn/Preloader";
+import Preloader from "../Commons/Preloader";
 
 class UsersContainer extends React.Component {
   componentDidMount() {

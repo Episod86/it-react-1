@@ -9,7 +9,7 @@ import { ProfileDataFormReduxForm } from "./ProfileDataForm";
 // import ProfileDataFormReduxForm from "./ProfileDataForm";
 
 // import style from "./ProfileStatus.module.css";
-
+import style from "./ProfileInfo.module.css";
 export const ProfileInfo = ({
   profile,
   status,
@@ -42,23 +42,25 @@ export const ProfileInfo = ({
 
   return (
     <div>
-      <div>
-        <img src={profile.photos.large || userPhoto} />
-        {isOwner && <input type={"file"} onChange={onMainPhotoSelected} />}
+      <div className={style.inform}>
+        <div className={style.infoPhoto}>
+          <img src={profile.photos.large || userPhoto} />
+          {isOwner && <input type={"file"} onChange={onMainPhotoSelected} />}
+        </div>
+        {editMode ? (
+          <ProfileDataFormReduxForm
+            initialValues={profile}
+            profile={profile}
+            onSubmit={onSubmit}
+          />
+        ) : (
+          <ProfileData
+            activateEditMode={activateEditMode}
+            profile={profile}
+            isOwner={isOwner}
+          />
+        )}
       </div>
-      {editMode ? (
-        <ProfileDataFormReduxForm
-          initialValues={profile}
-          profile={profile}
-          onSubmit={onSubmit}
-        />
-      ) : (
-        <ProfileData
-          activateEditMode={activateEditMode}
-          profile={profile}
-          isOwner={isOwner}
-        />
-      )}
       <ProfileStatus status={status} updateStatus={updateStatus} />
     </div>
   );
@@ -66,7 +68,7 @@ export const ProfileInfo = ({
 
 const ProfileData = ({ profile, isOwner, activateEditMode }) => {
   return (
-    <div>
+    <div className={style.infoText}>
       <div>Full name: {profile.fullName}</div>
 
       <div>Looking for a job: {profile.lookingForAJob ? "yes" : "no"}</div>

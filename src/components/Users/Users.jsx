@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Paginator } from "../Commosn/Paginator/Paginator";
+import { Paginator } from "../Commons/Paginator/Paginator";
 import { User } from "./User";
 
 import style from "./Users.module.css";

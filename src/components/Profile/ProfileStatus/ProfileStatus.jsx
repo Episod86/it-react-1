@@ -2,6 +2,8 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 
+import style from "./ProfileStatus.module.css";
+
 export const ProfileStatus = (props) => {
   const [editMode, setEditMode] = useState(false);
   let [status, setStatus] = useState(props.status);
@@ -23,7 +25,7 @@ export const ProfileStatus = (props) => {
     setStatus(e.currentTarget.value);
   };
   return (
-    <div>
+    <div className={style.status}>
       {!editMode && (
         <div>
           <span onClick={activateEditMode}>

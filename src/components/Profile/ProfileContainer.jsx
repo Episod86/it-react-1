@@ -20,7 +20,6 @@ class ProfileContainer extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    // debugger;
     if (this.props.match.params.userId1 !== prevProps.match.params.userId) {
       this.refreshProfile();
     }
